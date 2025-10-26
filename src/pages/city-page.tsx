@@ -9,6 +9,7 @@ import CurrentWeather from "@/components/current-weather";
 import HourlyWeather from "@/components/hourly-weather";
 import WeatherDetails from "@/components/weather-details";
 import ForecastDetails from "@/components/forecast-details";
+import { FavoriteButton } from "@/components/favorite-button";
 
 
 const CityPage = () => {
@@ -57,24 +58,27 @@ const CityPage = () => {
      <div className="space-y-4">
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold tracking-tight">{params.cityName} ,{weatherData.data.sys.country}</h1>
-        <Button
-          className={`cursor-pointer`}
-          variant={"outline"}
-          size={"icon"}
-          onClick={handleRefresh}
-          disabled={
-            weatherData.isFetching ||
-            forecastData.isFetching 
-          }
-        >
-          <RefreshCw
-            className={`h-4 w-4 ${
-              weatherData.isFetching
-                ? "animate-spin"
-                : ""
-            }`}
-          />
-        </Button>
+        <div className="flex gap-2">
+          <Button
+            className={`cursor-pointer`}
+            variant={"outline"}
+            size={"icon"}
+            onClick={handleRefresh}
+            disabled={
+              weatherData.isFetching ||
+              forecastData.isFetching 
+            }
+          >
+            <RefreshCw
+              className={`h-4 w-4 ${
+                weatherData.isFetching
+                  ? "animate-spin"
+                  : ""
+              }`}
+            />
+          </Button>
+          <FavoriteButton data={weatherData.data} />
+        </div>
       </div>
       <div className="grid gap-6"> 
         <div className="flex gap-4 flex-col lg:flex-row">
