@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from './ui/command'
 import { Button } from './ui/button';
 import { Clock, Loader2, SearchIcon, Star, XCircleIcon } from 'lucide-react';

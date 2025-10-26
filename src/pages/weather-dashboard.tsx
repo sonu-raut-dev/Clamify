@@ -2,7 +2,6 @@ import WeatherSkeleton from "@/components/loading-skeleton";
 import { Button } from "@/components/ui/button";
 import { useGeolocation } from "@/hooks/use-geolocation";
 import { AlertTriangle, MapPin, RefreshCw } from "lucide-react";
-import React from "react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
   useForecastQuery,
